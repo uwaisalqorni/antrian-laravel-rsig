@@ -26,6 +26,9 @@ class JadwalResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('doctor_name')
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\TimePicker::make('start_time')
                     ->required(),
                 Forms\Components\TimePicker::make('end_time')
@@ -46,6 +49,8 @@ class JadwalResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('doctor_name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('start_time'),
                 Tables\Columns\TextColumn::make('end_time'),

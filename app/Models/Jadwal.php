@@ -9,6 +9,7 @@ class Jadwal extends Model
     protected $fillable =
         [
             'name',
+            'doctor_name',
             'start_time',
             'end_time',
             'urutan',
