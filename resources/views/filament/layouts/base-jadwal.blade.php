@@ -10,34 +10,69 @@
 </head>
 <body class="flex flex-col min-w-screen min-h-screen bg-gray-100">
     <header class="bg-green-600 text-white p-4 text-lg text-center">
-        <h1 class="text-white-700 text-3xl font-bold mt-2" style="font-family: 'Edwardian Script ITC', cursive;">
+        <h1 class="text-white-800 text-3xl font-bold mt-2" style="font-family: 'Edwardian Script ITC', cursive;">
             Jadwal Pelayanan
         </h1>
         <h1 class="text-white-800 text-2xl font-extrabold">
             POLIKLINIK RSIGONDANGLEGI
         </h1>
-        {{-- <button id="jadwal-mode-button" class="bg-white text-blue-600 p-2 rounded absolute top-2 right-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-            </svg>
-        </button> --}}
     </header>
     <main class="p-6 w-full h-full flex flex-grow">
         {{ $slot }}
     </main>
 
-    {{-- @stack('scripts')
-    <script>
-        document.getElementById('farmasi-mode-button').addEventListener('click', () => {
-           if (!document.fullscreenElement) {
-               document.documentElement.requestFullscreen().catch((err) => {
-                   console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-               });
-           } else {
-               document.exitFullscreen();
-           }
-       });
-   </script> --}}
+    <footer class="bg-green-700 text-white text-center p-6">
+        <!-- Running Text -->
+        <div class="overflow-hidden bg-green-600 py-2">
+            <div class="whitespace-nowrap animate-marquee">
+                <span class="text-lg font-semibold mx-4">⚠️ Jadwal dan jam praktik dokter dapat berubah sewaktu-waktu! ⚠️</span>
+                <span class="text-lg font-semibold mx-4">📅 Silakan cek kembali untuk informasi terbaru. 📅</span>
+                <span class="text-lg font-semibold mx-4">☎️ Hubungi kami di 0812.3154.3474 untuk info lebih lanjut. ☎️</span>
+            </div>
+        </div>
+
+        <!-- Informasi Rumah Sakit -->
+        <p class="font-semibold italic mt-4">Jadwal dan jam praktik dokter dapat berubah sewaktu-waktu</p>
+        <p class="mt-2">Rumah Sakit Islam Gondanglegi - Jl. Hayam Wuruk No. 66 Gondanglegi - Malang</p>
+
+        <!-- Kontak -->
+        <div class="flex flex-wrap justify-center items-center space-x-4 mt-4">
+            <div class="flex items-center space-x-2">
+                <img src="https://img.icons8.com/ios-filled/24/ffffff/phone.png" alt="Phone">
+                <span>0812.3154.3474</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <img src="https://img.icons8.com/ios-filled/24/ffffff/phone.png" alt="Phone">
+                <span>(0341).879879</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram.png" alt="Instagram">
+                <span>@rsigondanglegi</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <img src="https://img.icons8.com/ios-filled/24/ffffff/domain.png" alt="Website">
+                <span>www.rsigondanglegi.co.id</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tambahkan ini di dalam <head> atau file CSS -->
+    <style>
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .animate-marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+    </style>
+
 
 </body>
 </html>

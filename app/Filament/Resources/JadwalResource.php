@@ -58,9 +58,9 @@ class JadwalResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('foto')
-                    ->circular(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
+                    ->square(),
+                Tables\Columns\ToggleColumn::make('is_active'),
+                    // ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
