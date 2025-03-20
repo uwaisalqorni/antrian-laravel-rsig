@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jadwal Poli RSIG</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    @filamentScripts
+    @filamentStyles
 
 </head>
 <body class="flex flex-col min-w-screen min-h-screen bg-gray-100">
@@ -72,6 +76,31 @@
             animation: marquee 10s linear infinite;
         }
     </style>
+
+{{-- @stack('scripts')
+    <script>
+        function animateCards() {
+            let cards = document.querySelectorAll('.jadwal-card');
+
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    // Hapus kelas animasi
+                    card.classList.remove('animate__zoomIn');
+
+                    // Tunggu sedikit sebelum menambahkan kembali agar animasi bisa diulang
+                    setTimeout(() => {
+                        card.classList.add('animate__zoomIn');
+                    }, 100);
+                }, index * 1000); // Animasi berjalan satu per satu
+            });
+        }
+
+        // Jalankan animasi pertama kali
+        animateCards();
+
+        // Looping animasi setiap 5 detik
+        setInterval(animateCards, 5000);
+    </script> --}}
 
 
 </body>
